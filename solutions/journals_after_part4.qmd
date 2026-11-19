@@ -1,0 +1,243 @@
+---
+title: "Journals: A Mock Paper"
+subtitle: "Prepared for a Quarto Workshop"
+thanks: "Preliminary draft. Please do not cite or circulate without permission from the author.
+  Department of Science, Example University. Email: <jane.doe@example.edu>.
+  Website: [www.example.com](https://www.example.com)."
+author: Jane Doe
+date: 4 March 2026
+date-format: "D MMMM YYYY"
+number-sections: true
+format:
+  pdf:
+    linestretch: 1.5
+---
+
+<!-- header 1 -->
+
+# Abstract {.unnumbered}
+
+<!-- paragraph 1 -->
+
+Why do some academic journals rank higher than others on Google Scholar? This paper introduces a new dataset on the rankings of fictitious journals, and uses it to explore what predicts their impact.\
+Journals that publish more issues, and those that publish in English, have higher scores. Specialised journals, by contrast, have lower scores than generalist ones.
+
+<!-- block quote -->
+
+> All models are wrong, but some are useful.
+>
+> --- George E. P. Box
+
+<!-- header 2 -->
+
+# Introduction
+
+<!-- paragraph 2 -->
+
+Researchers often choose where to submit their work based on **journal rankings**. Google Scholar offers one of the most widely used rankings, based on how often the articles in each journal are cited. Yet we know little about *why some journals rank higher than others*.
+
+<!-- paragraph 3 -->
+
+This paper addresses this gap with a new dataset.[^data] The dataset covers journals from all continents and all major branches of science, and it is freely available.^[The data and code are available on GitHub.]
+
+<!-- footnote 1 -->
+
+[^data]: The dataset is fabricated for the purposes of a workshop on reproducible research. Any resemblance to real journals is coincidental.
+
+<!-- paragraph 4 -->
+
+The [Literature Review](#literature-review) summarises what we know about journal rankings. The following sections then introduce the hypotheses, the data, and the results.
+
+<!-- paragraph 5 -->
+
+The models in this paper explain a moderate share of the variation in rankings, as measured by R^2^. The findings also speak to debates on the costs of academic publishing, including the CO~2~ emissions of conference travel.
+
+<!-- paragraph 6 -->
+
+Journals in the dataset publish 1--12 issues per year, which makes for considerable variation. The results suggest that this variation matters --- perhaps more than is commonly assumed.
+
+<!-- header 3 -->
+
+# Literature Review
+
+<!-- paragraph 7 -->
+
+Earlier studies have linked the impact of journals to their visibility <!-- citation -->. Visibility, in turn, depends on how often and in which language journals publish <!-- citation -->.
+
+<!-- paragraph 8 -->
+
+<!-- citation --> argues that frequent publication keeps journals in the minds of readers. Others focus on the role of editorial boards <!-- citation -->.
+
+<!-- paragraph 9 -->
+
+<!-- citation --> introduced the h-index, on which the H5 Index is based. Such indices are increasingly common in studies of academic publishing <!-- citation -->.
+
+<!-- paragraph 10 -->
+
+The literature suggests two broad explanations for the success of journals, each with two components:
+
+<!-- list -->
+
+-   Exposure
+    -   the number of issues published each year
+-   Accessibility
+    -   the language of publication
+
+<!-- paragraph 11 -->
+
+The existing publications differ in their research designs, as summarised in <!-- cross reference --> Table 1.
+
+<!-- table 1 -->
+
+Author Year Design Journal
+Bennett 2015 Experimental Journal of Bone
+Delgado & Perry 2010 Descriptive Journal of Route
+Gilbert 2019 Predictive Journal of Ground
+
+<!-- paragraph 12 -->
+
+None of these studies, however, has examined a large set of journals across disciplines. This is the contribution of the present paper.
+
+<!-- header 4 -->
+
+# Theory and Hypotheses
+
+<!-- paragraph 13 -->
+
+Journals compete for the attention of readers. Those that reach more readers are likely to be cited more, and to rank higher as a result.
+
+<!-- header 5 -->
+
+## First Hypothesis
+
+<!-- paragraph 14 -->
+
+Journals that publish more often offer more articles to cite. They also appear more often in the alerts and tables of contents that readers follow.
+
+<!-- hypothesis 1 -->
+
+> H1: *Journals that publish more issues per year have a higher H5 Index.*
+
+<!-- paragraph 15 -->
+
+This expectation should hold regardless of the discipline of journals.
+
+<!-- header 6 -->
+
+## Second Hypothesis
+
+<!-- paragraph 16 -->
+
+English is the dominant language of academic publishing. Journals that publish in English can therefore reach a larger audience.
+
+<!-- hypothesis 2 -->
+
+> H2: *Journals that publish in English have a higher H5 Index than those that publish in other languages.*
+
+<!-- paragraph 17 -->
+
+This expectation, too, should hold across disciplines.
+
+<!-- paragraph 18 -->
+
+Other characteristics of journals, such as their age and their focus, may matter as well. The analysis therefore controls for them.
+
+<!-- paragraph 19 -->
+
+The data come from Google Scholar, whose homepage is shown in <!-- cross reference --> Figure 1.
+
+<!-- figure 1 -->
+
+<!-- paragraph 20 -->
+
+Google Scholar ranks journals by their H5 Index and their H5 Median. Both measures are based on the articles that journals published in the last five complete years.
+
+<!-- header 7 -->
+
+# Data and Methods
+
+<!-- paragraph 21 -->
+
+There are <!-- inline code --> 1091 observations in the dataset. Journals come from all continents, although most are from Europe and the Americas, as <!-- cross reference --> Figure 2 shows.
+
+<!-- figure 2 -->
+
+<!-- paragraph 22 -->
+
+The analysis relies on ordinary least squares regressions, where $Y_{i}$ is the H5 Index of journal $i$ and $X_{i}$ is a set of its characteristics, as specified in <!-- cross reference --> Equation 1:
+
+<!-- block equation -->
+
+$$
+Y_{i} = \alpha + \beta X_{i} + \varepsilon_{i}
+$$
+
+<!-- paragraph 23 -->
+
+<!-- cross reference --> Table 2 describes the variables used in the analysis, and <!-- cross reference --> Table A1, in the Appendix, all variables in the dataset. Journals publish, on average, <!-- inline code --> 4.68 issues per year.
+
+<!-- table 2 -->
+
+<!-- paragraph 24 -->
+
+The H5 Index is the dependent variable. The H5 Median is closely related to it, and therefore left out of the models.
+
+<!-- paragraph 25 -->
+
+The number of issues is measured per year, and the age of journals in years. Language and focus are binary variables.
+
+<!-- paragraph 26 -->
+
+All models are estimated with the full sample of journals.
+
+<!-- header 8 -->
+
+# Results
+
+<!-- paragraph 27 -->
+
+<!-- cross reference --> Figure 3 shows a strong relationship between the two metrics of journals, in all branches of science.
+
+<!-- figure 3 -->
+
+<!-- paragraph 28 -->
+
+Subfield journals tend to have lower metrics than generalist journals. This pattern is visible in every branch.
+
+<!-- paragraph 29 -->
+
+<!-- cross reference --> Table 3 presents the results of the regression models. According to Model 1, every additional issue that journals publish in a given year is associated with a <!-- inline code --> 1.9 increase (standard error = <!-- inline code --> 0.2) in their H5 Index.
+
+<!-- paragraph 30 -->
+
+The relationship remains positive and significant when the other variables are added to the model. The results thus support the first hypothesis.
+
+<!-- table 3 -->
+
+<!-- paragraph 31 -->
+
+Journals that publish in English have a considerably higher H5 Index, in support of the second hypothesis.
+
+<!-- paragraph 32 -->
+
+Subfield journals have a lower H5 Index, while older journals have a slightly higher one.
+
+<!-- header 9 -->
+
+# Conclusion
+
+<!-- paragraph 33 -->
+
+This paper has introduced a new dataset on the rankings of journals. The analysis shows that exposure and accessibility both matter.
+
+<!-- paragraph 34 -->
+
+Future research could examine whether these patterns hold over time. It could also study the rankings of individual articles, rather than journals.
+
+<!-- paragraph 35 -->
+
+Finally, the paper itself is fully reproducible. Its text, data, and code are all in a single Quarto document.
+
+<!-- header 10 -->
+
+# References {.unnumbered}

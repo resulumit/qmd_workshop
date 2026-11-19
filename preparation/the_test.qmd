@@ -1,0 +1,66 @@
+---
+title: "The Test"
+subtitle: "Reproducible Research with Quarto and GitHub"
+execute:
+  echo: false
+  message: false
+  warning: false
+format: pdf
+---
+
+```{r}
+#| label: packages
+
+# check packages
+packages <- c("dplyr", "ggplot2", "modelsummary",
+              "quarto", "usethis", "gitcreds")
+missing <- packages[!sapply(packages, requireNamespace, quietly = TRUE)]
+if (length(missing) > 0) {
+  stop("Please install the following package(s): ",
+       paste(missing, collapse = ", "), call. = FALSE)
+}
+```
+
+```{r}
+#| label: versions
+
+# quarto
+quarto_version <- readLines(file.path(Sys.getenv("QUARTO_SHARE_PATH"), "version"))[1]
+quarto_ok <- package_version(quarto_version) >= "1.7"
+
+# git
+git <- suppressWarnings(tryCatch(
+  system2("git", "--version", stdout = TRUE, stderr = TRUE),
+  error = function(e) ""))
+git_ok <- length(git) > 0 && grepl("^git version", git[1])
+
+# packages
+package_versions <- paste0("`", packages, "` ",
+                           sapply(packages, function(p) as.character(packageVersion(p))),
+                           collapse = ", ")
+```
+
+# Congratulations!
+
+If you are reading this in a PDF document, your computer is ready to turn Quarto documents into PDF, with R, Quarto, and LaTeX working together.
+
+# Your setup
+
+```{r}
+#| label: setup-report
+#| output: asis
+
+cat("-   R: ", R.version.string, "\n", sep = "")
+cat("-   Quarto: version ", quarto_version,
+    if (quarto_ok) " --- up to date" else
+      " --- **please update RStudio, or install the latest version of Quarto**",
+    "\n", sep = "")
+cat("-   Git: ", if (git_ok) git[1] else "**not found --- please install Git**",
+    "\n", sep = "")
+cat("-   Packages: ", package_versions, "\n\n", sep = "")
+
+cat(if (quarto_ok && git_ok)
+      "Everything is ready. There is nothing else to do --- see you at the workshop!"
+    else
+      "Almost there: please see the item(s) in bold above, and the preparation guide.")
+```
