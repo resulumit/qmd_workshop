@@ -1,0 +1,245 @@
+/* wide slides -------------------------------------------------------------- */
+.reveal .slides {
+  width: 1280px !important;
+  height: 720px !important;
+}
+
+.reveal {
+  width: 100%;
+  height: 100%;
+}
+
+.reveal .slides section {
+  width: 100%;
+  height: 100%;
+}
+
+/* title slide -------------------------------------------------------------- */
+
+/* first slide, centred */
+.reveal .slides section:first-child {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+/* title slide, centred */
+.reveal .slides section.title-slide {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.reveal .slides section.title-slide h1,
+.reveal .slides section.title-slide .subtitle,
+.reveal .slides section.title-slide .author,
+.reveal .slides section.title-slide .date {
+  color: #ffffff !important;
+}
+
+/* part slides */
+.reveal .slides section.part-slide h1 {
+  color: #ffffff !important;
+}
+
+.reveal .slides section.part-slide .footnote,
+.reveal .slides section.part-slide .footnote a {
+  color: #ffffff !important;
+}
+
+/* links to and from contents */
+.reveal .slides section .slide-link {
+  position: absolute;
+  bottom: 1em;
+  left: 1.5em;
+  margin: 0;
+  font-size: 0.8em;
+  text-align: left;
+  color: #ffffff;
+}
+.reveal .slides section .slide-link p {
+  margin: 0;
+  color: #ffffff;
+}
+.reveal .slides section .slide-link a {
+  color: #ffff88;
+}
+
+/* lists -------------------------------------------------------------------- */
+
+/* more space after 2nd-level lists */
+.reveal ul > li > ul {
+  margin-bottom: 1.5em !important;
+}
+
+/* less space after 3rd-level lists */
+.reveal ul > li > ul > li > ul {
+  margin-bottom: 0.5em !important;
+}
+
+/* more space after 2nd-level ordered lists */
+.reveal ol > li > ol {
+  margin-bottom: 1.5em !important;
+}
+
+/* less space after 3rd-level ordered lists */
+.reveal ol > li > ol > li > ol {
+  margin-bottom: 0.5em !important;
+}
+
+/* unordered inside ordered */
+.reveal ol > li > ul {
+  margin-bottom: 1.5em !important;
+}
+.reveal ol > li > ul > li > ul {
+  margin-bottom: 0.5em !important;
+}
+
+/* ordered inside unordered */
+.reveal ul > li > ol {
+  margin-bottom: 1.5em !important;
+}
+.reveal ul > li > ol > li > ol {
+  margin-bottom: 0.5em !important;
+}
+
+/* titles ------------------------------------------------------------------- */
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  color: #447099;
+}
+
+.reveal h2 {
+  font-size: 1.8em !important; /* default ~2em */
+}
+
+/* action slide titles */
+.action-slide h1,
+.action-slide h2,
+.action-slide h3 {
+  color: #447099 !important;
+}
+
+/* footnotes ---------------------------------------------------------------- */
+.footnote {
+  font-size: 0.7em !important;
+  color: #666;
+}
+
+/* code --------------------------------------------------------------------- */
+.reveal pre {
+  font-size: 0.6em !important;
+}
+
+.reveal pre code {
+  background-color: #e5e5e5 !important;
+  color: #222 !important;
+}
+
+.reveal code {
+  background-color: #e5e5e5 !important;
+  color: #222 !important;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: monospace !important;
+  font-size: 0.7em;
+}
+
+/* code output */
+.cell-output pre code {
+  background-color: #9fff9f !important;
+  color: #000 !important;
+  margin-bottom: 0.8em !important;
+}
+
+.reveal .cell-output {
+  margin-top: 0.5em;
+}
+
+/* inline output */
+.reveal .inline-output {
+  background-color: #9fff9f !important;
+  color: #000 !important;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* output box */
+.reveal .output-box {
+  background-color: #9fff9f;
+  color: #000;
+  padding: 0.4em 0.8em;
+  border-radius: 4px;
+  margin: 0.4em 0 0.8em 0;
+  font-size: 0.9em;
+}
+
+.reveal .output-box h1,
+.reveal .output-box h2,
+.reveal .output-box h3,
+.reveal .output-box h4,
+.reveal .output-box h5 {
+  color: #000 !important;
+  margin: 0.1em 0 !important;
+}
+
+.reveal .output-box p {
+  margin: 0.3em 0;
+}
+
+/* code output inside output box */
+.reveal .output-box .cell-output div.sourceCode,
+.reveal .output-box .cell-output pre,
+.reveal .output-box .cell-output pre code {
+  background-color: #ffffff !important;
+  margin-bottom: 0 !important;
+}
+.reveal .output-box .cell-output pre.numberSource code > span > a::before {
+  display: none;
+}
+.reveal .output-box .cell-output pre.numberSource {
+  padding-left: 0.5em;
+  box-sizing: border-box;
+}
+.reveal .output-box .cell-output pre.numberSource code > span {
+  left: 0;
+  padding-left: 0;
+}
+
+/* output box, as a page */
+.reveal .output-box.page {
+  background-color: #ffffff;
+  border: 0.5em solid #9fff9f;
+}
+
+/* highlighting ------------------------------------------------------------- */
+.yellow-h {
+  background-color: #ffff88;
+}
+
+/* action slides */
+.action-slide {
+  background-color: #FFF3CD !important;
+}
+
+/* tables */
+.reveal table {
+  font-size: 0.8em;
+}
+
+/* countdown timer */
+.reveal .countdown code {
+  background-color: transparent !important;
+  padding: 0;
+}
+
+/* list then code: smaller gap */
+.reveal .slides section :is(ol, ul):has(+ :is(div.code-copy-outer-scaffold, div.sourceCode)) { margin-bottom: 0.4em; }
+.reveal .slides section :is(ol, ul):has(+ :is(div.code-copy-outer-scaffold, div.sourceCode)) > li:last-child > :is(ul, ol):last-child { margin-bottom: 0 !important; }
+.reveal .slides section :is(div.code-copy-outer-scaffold, div.sourceCode):has(+ :is(ol, ul)) { margin-bottom: 0.6em; }
