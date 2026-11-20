@@ -22,7 +22,8 @@ format:
     count-incremental-slides: false
     highlight-lines: true
     code-annotations: hover
-    aspectratio: max-scale
+    width: 1280
+    height: 720
     css: quarto_custom.css
     include-after-body:
       text: |
