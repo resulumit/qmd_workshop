@@ -140,6 +140,19 @@ Now, with [R Markdown, and then Quarto]{.yellow-h}, I am ... happy!
   - how many programmes would be needed, and how much would they cost?
       - there is an inverse relationship between this resource intensity and reproducibility
 
+## Reproducible Research | An Example<sup>*</sup>
+
+- An appendix to <a href="https://doi.org/10.1111/spsr.12521" target="_blank">one of my co-authored papers</a>, with
+  - 6 tables of regression results, and 2 of descriptive statistics
+  - 4 figures, e.g., comparing the sample with the population
+  - numbers in the text, e.g., the sample size, and estimates with confidence intervals
+
+- Excluding one group of respondents from the analysis has implications for all tables, figures, and statistics
+  - with Quarto, this takes one line of code, followed by rendering the document, and everything updates
+  - otherwise, every result would need to be re-done and re-pasted by hand
+
+<span class="footnote">* I demonstrate this example live during the workshop.</span>
+
 ## Reproducible Research | Principles
 
 - Keep text, code, and results together
