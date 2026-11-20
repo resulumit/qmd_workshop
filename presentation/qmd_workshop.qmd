@@ -403,13 +403,13 @@ Slides with this background colour indicate that your action is expected, for ex
 - Unzip and rename the folder
   - unzip to a location that is not synced
       - e.g., perhaps Documents, but not Dropbox or OneDrive
-  - rename the folder as `yourname-quarto`
+  - rename the folder, `qmd_workshop-materials`, as `yourname-quarto`
       - e.g., `resul-quarto`
       - this will come handy when we collaborate in [[Part 9](#collaboration-setup)]{.yellow-h}
 
 ## Materials | Overview
 
-Notice that the folder has the following structure
+Notice that the folder, after renaming, has the following structure
 
 :::: {.columns}
 
