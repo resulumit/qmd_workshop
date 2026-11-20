@@ -4518,6 +4518,7 @@ usethis::create_github_token()
 :::: {.columns}
 ::: {.column width="55%"}
 6. Store the token on your computer, in the `Console`
+    - if offered, choose `Replace these credentials`
     - paste your token when asked
 :::
 
@@ -4545,6 +4546,27 @@ gitcreds::gitcreds_set()
 ::: {.column width="45%"}
 ```{.r}
 usethis::git_sitrep()
+```
+:::
+::::
+
+## Version Control | Initial Setup | Expired Tokens
+
+:::: {.columns}
+::: {.column width="55%"}
+- If the report says `Can't get user information for this token`, GitHub does not accept your token
+  - e.g., because it has expired, or was created for an earlier project
+  - the report also shows `GitHub API error (401): Bad credentials`
+
+- To fix it, repeat steps 5 and 6
+  - create a new token
+  - store it, choosing `Replace these credentials`
+:::
+
+::: {.column width="45%"}
+```{.r}
+usethis::create_github_token()
+gitcreds::gitcreds_set()
 ```
 :::
 ::::
