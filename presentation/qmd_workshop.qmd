@@ -1770,7 +1770,6 @@ This is the first sentence of a new paragraph as it is
 preceded by a blank line. This is the second sentence of that paragraph.
 :::
 
-<span class="footnote">Keyboard shortcut: `Ctrl + Shift + C` on Windows, `Cmd + Shift + C` on Mac, comments out the selected lines.</span>
 
 ## Syntax | Exercises 7 -- 8 {.action-slide}
 {{< countdown id="timer-3" minutes=5 top=0 >}}
