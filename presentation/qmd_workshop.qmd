@@ -1155,14 +1155,6 @@ Quotation marks are optional for strings without special characters
   - `date: today` becomes the date on which the document is rendered
   - `date: last-modified` becomes the date on which the file was last modified
 
-- Code can be used as well
-
-```{.yaml}
-date: "First version: 4 March 2026. This version: `r format(Sys.Date(), '%d %B %Y')`."
-```
-
-<br>
-
 <span class="footnote">See <a href="https://quarto.org/docs/reference/dates.html" target="_blank">quarto.org/docs/reference/dates.html</a> for the date formats.</span>
 
 ## YAML | Strings | Notes
